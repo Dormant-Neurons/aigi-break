@@ -1,0 +1,14 @@
+/data
+.vscode
+**/__pycache__/
+**/*.pyc
+/models
+paper
+results
+.venv
+*.egg-info
+.ruff_cache/
+*.log
+paper_camera_ready/
+repro_logs/
+reproduce_dimva_tmux.sh

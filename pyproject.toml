@@ -1,0 +1,40 @@
+[project]
+name = "adv-df"
+version = "0.1.0"
+description = "Research artifact for adversarial evaluation of AI-generated image detectors."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "albumentations>=2.0.6",
+    "diffusers>=0.33.1",
+    "ftfy>=6.3.1",
+    "kornia>=0.8.0",
+    "numpy>=2.2.5",
+    "openai-clip>=1.0.1",
+    "pandas>=2.2.3",
+    "regex>=2024.11.6",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.15.2",
+    "scikit-image>=0.25.0",
+    "timm>=1.0.15",
+    "torch",
+    "torchvision",
+    "tqdm>=4.67.1",
+    "transformers>=4.51.3",
+]
+
+[tool.ruff]
+exclude = ["src/external"]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu130", marker = "platform_system == 'Linux' and platform_machine == 'x86_64'" },
+]
+torchvision = [
+    { index = "pytorch-cu130", marker = "platform_system == 'Linux' and platform_machine == 'x86_64'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
